@@ -228,7 +228,6 @@ h6 {
 .card img {
   display: block;
   margin-left: auto;
-  margin-top: 20px;
 }
 
 .card img:hover {
@@ -325,7 +324,7 @@ footer {
     transform: rotate(5deg);
   }
   50% {
-    transform: rotate(0eg);
+    transform: rotate(0deg);
   }
   75% {
     transform: rotate(-5deg);
