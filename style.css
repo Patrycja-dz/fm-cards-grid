@@ -1,18 +1,15 @@
-/* Box sizing rules */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Prevent font size inflation */
 html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
 }
 
-/* Remove default margin in favour of better control in authored CSS */
 body,
 h1,
 h2,
@@ -26,13 +23,11 @@ dd {
   margin-block-end: 0;
 }
 
-/* Set core body defaults */
 body {
   min-height: 100vh;
   line-height: 1.5;
 }
 
-/* Set shorter line heights on headings and interactive elements */
 h1,
 h2,
 h3,
@@ -43,7 +38,6 @@ label {
   line-height: 1.1;
 }
 
-/* Balance text wrapping on headings */
 h1,
 h2,
 h3,
@@ -51,71 +45,63 @@ h4 {
   text-wrap: balance;
 }
 
-/* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
   color: currentColor;
 }
 
-/* Make images easier to work with */
 img,
 picture {
   max-width: 100%;
   display: block;
 }
 
-/* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 5ex;
 }
-/* End of New CSS Reset */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 
 :root {
-  /* Primary Colors */
   --red: hsl(0, 78%, 62%);
   --cyan: hsl(180, 62%, 55%);
   --orange: hsl(34, 97%, 64%);
   --blue: hsl(212, 86%, 64%);
 
-  /* Neutral Colors */
   --very-dark-blue: hsl(234, 12%, 34%); /* Grey 500 from style guide */
   --grayish-blue: hsl(212, 6%, 44%); /* Grey 400 from style guide */
   --very-light-gray: hsl(0, 0%, 98%); /* For background */
   --white: hsl(0, 0%, 100%);
 
-  /* Typography */
   --font-family-default: "Poppins", sans-serif;
-  --font-weight-extralight: 200; /* Renamed from --font-weight-light for clarity */
-  --font-weight-regular: 400; /* Renamed from --font-weight-normal for clarity */
-  --font-weight-semibold: 600; /* Renamed from --font-weight-bold for clarity */
+  --font-weight-extralight: 200;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --body-font-size: 15px;
 
-  --body-font-size: 15px; /* Corresponds to text-preset-4 */
-
-  /* Spacing Units from Style Guide */
   --space-100: 8px;
   --space-200: 16px;
   --space-300: 24px;
   --space-400: 32px;
   --space-500: 40px;
+
+  --border-top-width: 4px;
 }
 
 body {
   font-family: var(--font-family-default);
-  font-size: var(--body-font-size); /* 15px */
-  font-weight: var(--font-weight-regular); /* 400 */
-  line-height: 1.4; /* From text-preset-4 */
-  letter-spacing: 0px; /* From text-preset-4 */
+  font-size: var(--body-font-size);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.4;
+  letter-spacing: 0px;
   background-color: var(--very-light-gray);
   color: var(--grayish-blue);
   margin: 0;
-  padding: var(--space-300); /* Using spacing variable, 24px */
+  padding: var(--space-300);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* min-height: 100vh; */
   box-sizing: border-box;
 }
 p {
@@ -129,54 +115,16 @@ h4,
 h5,
 h6 {
   color: var(--very-dark-blue);
-  font-weight: var(
-    --font-weight-semibold
-  ); /* Default to semibold for headings */
+  font-weight: var(--font-weight-semibold);
 }
 
-/* Utility Classes for Colors */
-.text-red {
-  color: var(--red);
-}
-.text-cyan {
-  color: var(--cyan);
-}
-.text-orange {
-  color: var(--orange);
-}
-.text-blue {
-  color: var(--blue);
-}
 .text-very-dark-blue {
   color: var(--very-dark-blue);
 }
 .text-grayish-blue {
   color: var(--grayish-blue);
 }
-.text-white {
-  color: var(--white);
-}
 
-.bg-red {
-  background-color: var(--red);
-}
-.bg-cyan {
-  background-color: var(--cyan);
-}
-.bg-orange {
-  background-color: var(--orange);
-}
-.bg-blue {
-  background-color: var(--blue);
-}
-.bg-white {
-  background-color: var(--white);
-}
-.bg-very-light-gray {
-  background-color: var(--very-light-gray);
-}
-
-/* Utility Classes for Typography */
 .font-light {
   font-weight: var(--font-weight-light);
 }
@@ -187,7 +135,6 @@ h6 {
   font-weight: var(--font-weight-bold);
 }
 
-/* Utility Classes for Typography Weights (updated names) */
 .font-extralight {
   font-weight: var(--font-weight-extralight);
 }
@@ -198,7 +145,6 @@ h6 {
   font-weight: var(--font-weight-semibold);
 }
 
-/* Typography Presets from Style Guide */
 .text-preset-1 {
   /* Poppins Semibold, 36px, 140% Line Height, 0.25px Letter Spacing */
   font-size: 24px;
@@ -239,15 +185,15 @@ h6 {
   letter-spacing: 0.09px;
 }
 
-/* Card specific styles */
 .card {
   background-color: var(--white);
-  border-radius: var(--space-100); /* 8px */
-  padding: var(--space-400); /* 24px, adjusted from 25px */
-  margin-inline: var(--space-200); /* 16px, adjusted from 15px */
+  border-radius: var(--space-100);
+  padding: var(--space-400);
+  margin-inline: var(--space-200);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
-  border-top-width: 4px; /* This can be a variable too if needed */
+  border-top-width: var(--border-top-width);
   border-top-style: solid;
+  color: var(--grayish-blue);
 }
 
 .card-cyan {
@@ -264,7 +210,6 @@ h6 {
 }
 
 .card h3 {
-  /* Apply text-preset-3 */
   font-size: 20px;
   font-weight: var(--font-weight-semibold);
   line-height: 1.35;
@@ -273,18 +218,21 @@ h6 {
 }
 
 .card p {
-  /* Apply text-preset-5 */
   font-size: 13px;
   font-weight: var(--font-weight-regular);
   line-height: 1.6;
   letter-spacing: 0px;
-  margin-bottom: var(--space-400); /* 24px, adjusted from 2em */
+  margin-bottom: var(--space-400);
 }
 
 .card img {
   display: block;
   margin-left: auto;
   margin-top: 20px;
+}
+
+.card img:hover {
+  animation: tilt-shaking 0.25s infinite;
 }
 
 .card__wrapper {
@@ -299,6 +247,12 @@ h6 {
 .card-title__wrapper {
   text-align: center;
   margin: min(5vh, 3rem);
+  width: clamp(34ch, 50%, 75ch);
+}
+
+footer {
+  text-align: center;
+  margin-top: min(2vh, 2.5rem);
   width: clamp(34ch, 50%, 75ch);
 }
 
@@ -360,5 +314,23 @@ h6 {
   .card:nth-child(4) {
     grid-column: span 6;
     grid-row: 3;
+  }
+}
+
+@keyframes tilt-shaking {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0eg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
